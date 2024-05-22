@@ -1,47 +1,330 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-    content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lagrangian Motion Fields for Long-term Motion Generation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="https://fonts.cdnfonts.com/css/chalkduster" rel="stylesheet">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
     }
 
-    gtag('js', new Date());
+    .page-container {
+      width: 100%;
+      text-align: center;
+      padding: 1em;
+    }
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+    button {
+      position: fixed;
+      right: 15px;
+      top: 50%;
+      height: 50px;
+      width: 100px;
+      font-size: 14px;
+      background-color: #008080;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    h1, h2 {
+      color: #008080;
+    }
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./resources/icon/michael-jackson.svg">
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    .empty-row {
+      height: 20px;
+    }
+
+    .video-cell {
+      width: 200px;
+    }
+
+    .video-caption {
+      font-size: 16px;
+    }
+
+    .large-font {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 24px;
+      /* color: #ff0000; */
+    }
+
+    @media only screen and (max-width: 1200px) {
+      .page-container {
+        width: 100%;
+        overflow-x: auto;
+      }
+    }
+
+    @media only screen and (min-width: 1201px) {
+      .page-container {
+        width: 1200px; /* 或者你想要的固定宽度 */
+        margin: 0 auto; /* 居中显示，如果需要 */
+      }
+    }
+
+  </style>
+
+  <title>Lagrangian Motion Fields for Long-term Motion Generation</title>
 </head>
 
 <body>
-  Text for debug.
+  <button class="custom-button" type="button" onclick="scrollToTop()">Back to top</button>
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  
+  <div class="page-container">
+    <h1>Lagrangian Motion Fields for Long-term Motion Generation</h1>
+    <h2>Supplementary Materials</h2>
+
+    <ul>
+      <li><a href="#" onclick="scrollToSection('m2d')">Long-Term Music-to-Dance</a></li>
+      <li><a href="#" onclick="scrollToSection('t2m')">Long-Term Text-to-Motion</a></li>
+      <li><a href="#" onclick="scrollToSection('app-ILP')">Applications: Infinite Looping Dance</a></li>
+      <li><a href="#" onclick="scrollToSection('app-DCT2M')">Applications: Duration Controlled Text-to-Motion</a></li>
+    </ul>
+    
+    <script>
+      function scrollToSection(sectionId) {
+        var targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    </script>
+
+    <!-- BEGIN SECTION -->
+    <hr>
+    <h2 id="m2d" align="left">Long-Term Music-to-Dance</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr class="empty-row"></tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="200" src="assets/compare/wolf/wolf_input.mp4" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+    
+        <tr class="video-caption">
+          <th>Ours</th>
+        </tr>
+        
+        <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+    <!-- END SECTION -->
+
+    <hr>
+    <h2 id="t2m" align="left">Long-Term Text-to-Motion</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr class="large-font">
+          <td colspan="6">A person walks forwards, sits.</td>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\ours\t2m_0.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\mdm\t2m_0.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+    
+        <tr class="video-caption">
+          <th>Ours</th>
+          <th>MDM</th>
+        </tr>
+
+        <tr class="large-font">
+          <td colspan="6">A person sneaks away while walking sideways.</td>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\ours\t2m_1.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\mdm\t2m_1.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+    
+        <tr class="video-caption">
+          <th>Ours</th>
+          <th>MDM</th>
+        </tr>
+
+        <tr class="large-font">
+          <td colspan="6">A person walks in a circle slowly, stops to perform a series of jumping jacks, then resumes walking in an opposite, larger circle.</td>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\ours\t2m_2.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+
+          <th class="video-cell">
+            <video width="500" src="assets\t2m\mdm\t2m_2.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+    
+        <tr class="video-caption">
+          <th>Ours</th>
+          <th>MDM</th>
+        </tr>
+              <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+
+    <hr>
+    <h2 id="app" align="left">Applications: Infinite Looping Dance</h2>
+    <table width="1200" align="center">
+      <tbody>
+        <tr class="empty-row"></tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\063.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\132.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\143.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\161.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+
+        <tr>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\179.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+          <th class="video-cell">
+            <video width="500" src="assets\loop_dance\193.mov" autoplay="" loop="" controls="" muted=""></video>
+          </th>
+        </tr>
+
+      </tbody>
+    </table>
+
+        <hr>
+        <h2 id="app" align="left">Applications: Duration Controlled Text-to-Motion</h2>
+        <table width="1200" align="center">
+          <tbody>
+            <tr class="empty-row"></tr>
+        
+            <tr class="large-font">
+              <td colspan="3">A person is crouched down and walking around sneakily.
+              </td>
+            </tr>
+    
+            <tr>
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\100_1_1.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\150_1_2.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\200_1_1.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+            </tr>
+
+            <tr class="video-caption">
+              <th>60 Frames</th>
+              <th>120 Frames</th>
+              <th>180 Frames</th>
+            </tr>
+
+            <tr class="large-font">
+              <td colspan="3">A person turning around and happy about the acceptance of SIGGRAPH.
+              </td>
+            </tr>
+    
+            <tr>
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\100_18_1.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\150_18_0.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="assets\length_control\200_18_1.mov" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+            </tr>
+
+            <tr class="video-caption">
+              <th>60 Frames</th>
+              <th>120 Frames</th>
+              <th>180 Frames</th>
+            </tr>
+
+            <tr class="large-font">
+              <td colspan="3">A person turning around and happy about the acceptance of SIGGRAPH.
+              </td>
+            </tr>
+    
+            <tr>
+              <th class="video-cell">
+                <video width="500" src="" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+
+              <th class="video-cell">
+                <video width="500" src="" autoplay="" loop="" controls="" muted=""></video>
+              </th>
+            </tr>
+
+            <tr class="video-caption">
+              <th>60 Frames</th>
+              <th>120 Frames</th>
+              <th>180 Frames</th>
+            </tr>
+          </tbody>
+        </table>
+        <!-- ... (others) ... -->
+        <tr> <td><br></td> </tr>
+      </tbody>
+    </table>
+    <!-- END SECTION -->
+
+  </div>
 </body>
 
 </html>
