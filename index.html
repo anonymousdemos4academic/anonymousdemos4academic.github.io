@@ -79,6 +79,34 @@
       }
     }
 
+      .scrollable-text {
+        height: 280px; /* 与视频高度一致 */
+        overflow-y: scroll;
+        padding-right: 10px; /* 添加一点内边距以避免文本紧贴边缘 */
+        word-wrap: break-word; /* 确保长单词能够换行 */
+        word-break: break-all; /* 确保非常长的单词或链接在必要时断行 */
+        text-align: left; /* 添加这个属性让文本左对齐 */
+      }
+    
+      .video-cell {
+        text-align: center;
+        vertical-align: top;
+      }
+    
+      /* 可选：为滚动条样式设置 */
+      .scrollable-text::-webkit-scrollbar {
+        width: 8px;
+      }
+    
+      .scrollable-text::-webkit-scrollbar-thumb {
+        background-color: #ccc;
+        border-radius: 4px;
+      }
+    
+      .scrollable-text::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+
   </style>
 
   <title>Lagrangian Motion Fields for Long-term Motion Generation</title>
@@ -162,61 +190,152 @@
     <h2 id="t2m" align="left">Long-Term Text-to-Motion</h2>
     <table width="1200" align="center">
       <tbody>
-        <tr class="large-font">
-          <td colspan="6">A person walks forwards, sits.</td>
+        <tr>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	The person walked in and sat down immediately.<br>
+                2.	Then raised his hands and started to warm them up.<br>
+                3.	Then walked in a counterclockwise circle while holding their left hand up at eye level.<br>
+                4.	Then walked from the left side to the right side and hopped over an obstacle.<br>
+                5.	Then walked slightly forward, turned around, and ran backward.<br>
+                6.	Then walked in an anti-clockwise fashion.<br>
+                7.	Then walked up the stairs.<br>
+                8.	Then stood in a pose for prayer.<br>
+                9.	Then did poses with his arms.<br>
+                10.	Then waved with a circular motion using their left hand.<br>
+              </p>
+            </div>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/92_mesh_mdm.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/92_mesh_mdm_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM</th>
+              <th>MDM + Ours</th>
+            </tr>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/92_mesh_t2mgpt.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/92_mesh_t2mgpt_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT</th>
+              <th>T2M-GPT + Ours</th>
+            </tr>
+          </th>
         </tr>
 
         <tr>
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\ours\t2m_0.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	The figure appears to catch and throw a ball twice, then misses the ball and goes to get it.<br>
+                2.	Then picks up an object from their right, holds it up to their left, before placing it back down.<br>
+                3.	Then sways from right to left.<br>
+                4.	Then this person is boxing with their right and left hand.<br>
+                5.	Then grabs something and tries to open it.<br>
+                6.	Then this person is practicing their tennis forehand.<br>
+                7.	Then this person is walking to the left and then to the right.<br>
+                8.	Then this person is walking forwards.<br>
+                9.	Then stretches from left to right.<br>
+                10.	Then this person is making gestures.<br>
+              </p>
+            </div>
           </th>
 
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\mdm\t2m_0.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/135_mesh_mdm.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/135_mesh_mdm_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM</th>
+              <th>MDM + Ours</th>
+            </tr>
+          </th>
+
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/135_mesh_t2mgpt.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/135_mesh_t2mgpt_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT</th>
+              <th>T2M-GPT + Ours</th>
+            </tr>
           </th>
         </tr>
-    
-        <tr class="video-caption">
-          <th>Ours</th>
-          <th>MDM</th>
-        </tr>
 
-        <tr class="large-font">
-          <td colspan="6">A person sneaks away while walking sideways.</td>
-        </tr>
 
         <tr>
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\ours\t2m_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          <th class="text">
+            <div class="scrollable-text">
+              <p>
+                1.	A person dances with their arms out in front of them, like a salsa.<br>
+                2.	Then twists their body and punches the air.<br>
+                3.	Then sits cross-legged before switching the cross between legs repeatedly.<br>
+                4.	Then this person is moving something around.<br>
+                5.	Then turns around, shifts to their right, then bends down before jumping up and to the right.<br>
+                6.	Then takes a clumsy walk slightly sideways.<br>
+                7.	Then walks in a very straight line with his arms outstretched at his sides.<br>
+                8.	Then rows a boat while standing.<br>
+                9.	Then walks forward and squats.<br>
+                10.	Then the person is doing arm exercises.<br>
+              </p>
+            </div>
           </th>
 
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\mdm\t2m_1.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
-          </th>
-        </tr>
-    
-        <tr class="video-caption">
-          <th>Ours</th>
-          <th>MDM</th>
-        </tr>
-
-        <tr class="large-font">
-          <td colspan="6">A person walks in a circle slowly, stops to raise both hands, then resumes walking in an opposite, larger circle.</td>
-        </tr>
-
-        <tr>
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\ours\t2m_2.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/44_mesh_mdm.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/44_mesh_mdm_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>MDM</th>
+              <th>MDM + Ours</th>
+            </tr>
           </th>
 
-          <th class="video-cell">
-            <video width="500" src="assets\t2m\mdm\t2m_2.mov" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+          <th>
+            <tr>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/44_mesh_t2mgpt.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+              <th class="video-cell">
+                <video width="400" src="assets/humanml3d_mp/44_mesh_t2mgpt_ours.mp4" autoplay="" loop="" controls="" muted="" oncontextmenu="return false;"></video>
+              </th>
+            </tr>
+            <tr class="video-caption">
+              <th>T2M-GPT</th>
+              <th>T2M-GPT + Ours</th>
+            </tr>
           </th>
-        </tr>
-    
-        <tr class="video-caption">
-          <th>Ours</th>
-          <th>MDM</th>
         </tr>
               <!-- ... (others) ... -->
         <tr> <td><br></td> </tr>
